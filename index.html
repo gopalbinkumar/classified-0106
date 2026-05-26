@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy Birthday Sayang 🎂">
+    <title>Happy Birthday Sayang 🎂</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- LOADING SCREEN                                               -->
+<!-- ============================================================ -->
+<div id="loading-screen">
+    <div class="loading-content">
+        <div class="loading-heart">❤️</div>
+        <div class="loading-text">Menyiapkan kejutan untukmu...</div>
+        <div class="loading-bar"><div class="loading-progress"></div></div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- FLOATING HEARTS CONTAINER                                    -->
+<!-- ============================================================ -->
+<div id="hearts-container" aria-hidden="true"></div>
+
+<!-- ============================================================ -->
+<!-- CONFETTI CONTAINER                                           -->
+<!-- ============================================================ -->
+<div id="confetti-container" aria-hidden="true"></div>
+
+<!-- ============================================================ -->
+<!-- SURPRISE OVERLAY                                             -->
+<!-- ============================================================ -->
+<div id="surprise-overlay" aria-hidden="true">
+    <div class="surprise-content">
+        <div class="surprise-emoji">💖</div>
+        <div class="surprise-text">I Love You</div>
+        <div class="surprise-sub">Sayang ❤️</div>
+        <button class="surprise-close" onclick="closeSurprise()">×</button>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 1: HERO                                              -->
+<!-- ============================================================ -->
+<section id="hero" class="section-hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge">🎂 Special Day 🎂</div>
+        <h2 class="hero-subtitle">Happy Birthday</h2>
+        <h1 class="hero-name">Sayang</h1>
+        <div class="hero-divider">
+            <span>♡</span><span>♡</span><span>♡</span>
+        </div>
+        <p class="hero-tagline">Untuk seseorang yang paling spesial dalam hidupku.</p>
+        <button class="btn-journey" onclick="scrollToNext('letter')">
+            <span>Mulai Perjalanan Kita</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </button>
+    </div>
+    <div class="hero-stars" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 2: SURAT DIGITAL                                     -->
+<!-- ============================================================ -->
+<section id="letter" class="section-letter">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-tag">💌 Untuk Kamu</span>
+            <h2 class="section-title">Surat Dariku</h2>
+        </div>
+        <div class="letter-card reveal-up">
+            <div class="letter-decoration top-left">❝</div>
+            <div class="letter-decoration bottom-right">❞</div>
+            <div id="typewriter-text" class="letter-body">
+                <!-- Diisi oleh JS typewriter -->
+            </div>
+            <div class="letter-seal">
+                <span>💌</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 3: TIMELINE KENANGAN                                 -->
+<!-- ============================================================ -->
+<section id="timeline" class="section-timeline">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-tag">🌸 Perjalanan Kita</span>
+            <h2 class="section-title">Kenangan Indah</h2>
+        </div>
+        <div class="timeline-wrapper">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item reveal-up" data-index="0">
+                <div class="timeline-dot"><span>✨</span></div>
+                <div class="timeline-card">
+                    <div class="timeline-date">Agustus 2022</div>
+                    <h3 class="timeline-title">Pertama Kenalan</h3>
+                    <p class="timeline-story">Waktu itu aku tidak tahu, pertemuan kecil itu akan mengubah seluruh hidupku. Senyummu adalah hal pertama yang aku perhatikan.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up" data-index="1">
+                <div class="timeline-dot"><span>💌</span></div>
+                <div class="timeline-card">
+                    <div class="timeline-date">September 2022</div>
+                    <h3 class="timeline-title">Pertama Chat</h3>
+                    <p class="timeline-story">Pesan pertamamu membuatku gugup sekaligus senang. Aku baca berkali-kali sambil senyum sendiri seperti orang bodoh.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up" data-index="2">
+                <div class="timeline-dot"><span>🌸</span></div>
+                <div class="timeline-card">
+                    <div class="timeline-date">November 2022</div>
+                    <h3 class="timeline-title">Pertama Bertemu</h3>
+                    <p class="timeline-story">Jantungku berdebar keras saat melihatmu datang. Kamu bahkan lebih indah dari yang aku bayangkan.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up" data-index="3">
+                <div class="timeline-dot"><span>🌅</span></div>
+                <div class="timeline-card">
+                    <div class="timeline-date">Desember 2022</div>
+                    <h3 class="timeline-title">Pertama Jalan Bersama</h3>
+                    <p class="timeline-story">Hari itu terasa ajaib. Waktu berlalu begitu cepat ketika bersamamu, dan aku tidak ingin pulang.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up" data-index="4">
+                <div class="timeline-dot"><span>💑</span></div>
+                <div class="timeline-card">
+                    <div class="timeline-date">Januari 2023</div>
+                    <h3 class="timeline-title">Resmi Bersama</h3>
+                    <p class="timeline-story">Hari paling indah dalam hidupku. Kamu bilang iya, dan sejak saat itu, kamu adalah rumahku.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up" data-index="5">
+                <div class="timeline-dot"><span>🎂</span></div>
+                <div class="timeline-card">
+                    <div class="timeline-date">27 Mei</div>
+                    <h3 class="timeline-title">Hari Ini</h3>
+                    <p class="timeline-story">Setiap hari bersamamu adalah hadiah. Hari ini, aku ingin merayakan keberadaanmu di dunia ini — dan di hidupku.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 4: GALERI FOTO                                       -->
+<!-- ============================================================ -->
+<section id="gallery" class="section-gallery">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-tag">📸 Momen Kita</span>
+            <h2 class="section-title">Galeri Kenangan</h2>
+        </div>
+        <div class="gallery-grid reveal-up">
+
+            <div class="gallery-item" onclick="openModal(0)">
+                <div class="gallery-img-wrapper">
+                    <img src="assets/photos/photo1.jpg" alt="Momen pertama yang tak terlupakan 🌸" loading="lazy" onerror="this.onerror=null; this.src=''; this.parentElement.classList.add('placeholder'); this.parentElement.setAttribute('data-index','1')">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-icon">🔍</div>
+                        <p class="gallery-caption">Momen pertama yang tak terlupakan 🌸</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openModal(1)">
+                <div class="gallery-img-wrapper">
+                    <img src="assets/photos/photo2.jpg" alt="Senyummu adalah favoritku 😊" loading="lazy" onerror="this.onerror=null; this.src=''; this.parentElement.classList.add('placeholder'); this.parentElement.setAttribute('data-index','2')">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-icon">🔍</div>
+                        <p class="gallery-caption">Senyummu adalah favoritku 😊</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openModal(2)">
+                <div class="gallery-img-wrapper">
+                    <img src="assets/photos/photo3.jpg" alt="Petualangan kecil kita 🌅" loading="lazy" onerror="this.onerror=null; this.src=''; this.parentElement.classList.add('placeholder'); this.parentElement.setAttribute('data-index','3')">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-icon">🔍</div>
+                        <p class="gallery-caption">Petualangan kecil kita 🌅</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openModal(3)">
+                <div class="gallery-img-wrapper">
+                    <img src="assets/photos/photo4.jpg" alt="Bahagia bersamamu 💕" loading="lazy" onerror="this.onerror=null; this.src=''; this.parentElement.classList.add('placeholder'); this.parentElement.setAttribute('data-index','4')">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-icon">🔍</div>
+                        <p class="gallery-caption">Bahagia bersamamu 💕</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openModal(4)">
+                <div class="gallery-img-wrapper">
+                    <img src="assets/photos/photo5.jpg" alt="Kenangan yang selalu ku ingat ✨" loading="lazy" onerror="this.onerror=null; this.src=''; this.parentElement.classList.add('placeholder'); this.parentElement.setAttribute('data-index','5')">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-icon">🔍</div>
+                        <p class="gallery-caption">Kenangan yang selalu ku ingat ✨</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openModal(5)">
+                <div class="gallery-img-wrapper">
+                    <img src="assets/photos/photo6.jpg" alt="Kamu adalah rumahku 🏡" loading="lazy" onerror="this.onerror=null; this.src=''; this.parentElement.classList.add('placeholder'); this.parentElement.setAttribute('data-index','6')">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-icon">🔍</div>
+                        <p class="gallery-caption">Kamu adalah rumahku 🏡</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Modal -->
+<div id="gallery-modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <button class="modal-prev" onclick="changePhoto(-1)">&#10094;</button>
+        <button class="modal-next" onclick="changePhoto(1)">&#10095;</button>
+        <div class="modal-img-wrapper">
+            <img id="modal-img" src="" alt="">
+        </div>
+        <p id="modal-caption" class="modal-caption"></p>
+    </div>
+</div>
+
+<!-- Gallery data for JS -->
+<script>
+    const galleryData = [
+        {"src":"assets\/photos\/photo1.jpg","caption":"Momen pertama yang tak terlupakan \uD83C\uDF38"},
+        {"src":"assets\/photos\/photo2.jpg","caption":"Senyummu adalah favoritku \uD83D\uDE0A"},
+        {"src":"assets\/photos\/photo3.jpg","caption":"Petualangan kecil kita \uD83C\uDF05"},
+        {"src":"assets\/photos\/photo4.jpg","caption":"Bahagia bersamamu \uD83D\uDC95"},
+        {"src":"assets\/photos\/photo5.jpg","caption":"Kenangan yang selalu ku ingat \u2728"},
+        {"src":"assets\/photos\/photo6.jpg","caption":"Kamu adalah rumahku \uD83C\uDFE1"}
+    ];
+</script>
+
+<!-- ============================================================ -->
+<!-- SECTION 5: ALASAN MENYAYANGI                                 -->
+<!-- ============================================================ -->
+<section id="reasons" class="section-reasons">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-tag">💖 Dari Hatiku</span>
+            <h2 class="section-title">Alasan Aku Menyayangimu</h2>
+        </div>
+        <div class="reasons-card reveal-up">
+            <div class="reasons-icon">💝</div>
+            <p id="reason-text" class="reason-text">Tekan tombol untuk melihat alasannya...</p>
+            <div class="reason-counter">
+                <span id="reason-num">0</span> / 8
+            </div>
+            <button class="btn-reason" onclick="showNextReason()">
+                Lihat Alasan Berikutnya 💕
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    const reasons = [
+        "Aku suka senyummu yang bisa menerangkan hariku \u2764\uFE0F",
+        "Aku suka cara kamu tertawa sampai matamu menyipit \u2764\uFE0F",
+        "Aku suka perhatianmu yang selalu membuatku merasa dicinta \u2764\uFE0F",
+        "Aku suka cara kamu mendukungku di setiap langkahku \u2764\uFE0F",
+        "Aku suka caramu bilang \"hati-hati\" setiap kali aku pergi \u2764\uFE0F",
+        "Aku suka saat kamu cemberut lucu karena hal-hal kecil \u2764\uFE0F",
+        "Aku suka kehangatanmu yang selalu membuatku merasa aman \u2764\uFE0F",
+        "Aku suka semuanya tentangmu, tanpa terkecuali \u2764\uFE0F"
+    ];
+</script>
+
+<!-- ============================================================ -->
+<!-- SECTION 6: VIDEO KENANGAN                                    -->
+<!-- ============================================================ -->
+<section id="video" class="section-video">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-tag">🎥 Momen Bergerak</span>
+            <h2 class="section-title">Video Kenangan</h2>
+        </div>
+        <div class="video-wrapper reveal-up">
+            <div class="video-decoration top"></div>
+            <div class="video-decoration bottom"></div>
+            <div class="video-card">
+                <video
+                    controls
+                    preload="metadata"
+                    poster="assets/photos/photo1.jpg"
+                    class="birthday-video"
+                >
+                    <source src="assets/video/kenangan.mp4" type="video/mp4">
+                    <source src="assets/video/kenangan.webm" type="video/webm">
+                    <p>Browser kamu tidak mendukung video. Silahkan gunakan browser modern.</p>
+                </video>
+                <div class="video-label">
+                    <span>🎬</span>
+                    <span>Kenangan kita yang paling indah</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 7: UCAPAN ULANG TAHUN                               -->
+<!-- ============================================================ -->
+<section id="wishes" class="section-wishes">
+    <div class="container">
+        <div class="section-header reveal-up">
+            <span class="section-tag">🎂 Doa &amp; Harapan</span>
+            <h2 class="section-title">Ucapan Ulang Tahun</h2>
+        </div>
+        <div class="wishes-card reveal-up">
+            <div class="wishes-icon">🎂</div>
+            <div class="wishes-body">
+                <p>Di hari istimewamu ini, 27 Mei,</p>
+                <p>aku memanjatkan doa yang paling tulus dari lubuk hatiku yang paling dalam.</p>
+                <br>
+                <div class="wishes-list">
+                    <div class="wish-item"><span>🌸</span><p>Semoga setiap hari dalam hidupmu penuh dengan kebahagiaan yang tak terhitung.</p></div>
+                    <div class="wish-item"><span>💪</span><p>Semoga kesehatanmu selalu terjaga, kekuatanmu tak pernah padam.</p></div>
+                    <div class="wish-item"><span>⭐</span><p>Semoga semua impian dan cita-citamu terwujud satu per satu.</p></div>
+                    <div class="wish-item"><span>💕</span><p>Semoga cinta kita terus tumbuh, semakin dalam setiap harinya.</p></div>
+                    <div class="wish-item"><span>✨</span><p>Semoga hidupmu selalu diterangi cahaya dan dikelilingi orang-orang yang mencintaimu.</p></div>
+                </div>
+                <br>
+                <p class="wishes-closing">Selamat ulang tahun, cintaku. Semoga kamu tahu betapa berharganya kamu bagiku.</p>
+            </div>
+            <div class="wishes-signature">— dengan cinta, Aku 💌</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 8: PESAN TERAKHIR                                    -->
+<!-- ============================================================ -->
+<section id="final" class="section-final">
+    <div class="container">
+        <div class="final-content reveal-up">
+            <div class="final-top-hearts">💖 💕 💖</div>
+            <h2 class="final-title">Happy Birthday My Love</h2>
+            <div class="final-divider">✦ ✦ ✦</div>
+            <p class="final-message">
+                Terima kasih sudah menjadi bagian terindah dalam hidupku.<br>
+                Kamu adalah alasan aku percaya pada cinta yang sesungguhnya.
+            </p>
+            <p class="final-name">Sayang</p>
+            <button class="btn-surprise" onclick="triggerSurprise()">
+                <span class="btn-surprise-icon">🎁</span>
+                <span>Klik Untuk Kejutan</span>
+                <span class="btn-surprise-sparkle">✨</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER                                                       -->
+<!-- ============================================================ -->
+<footer class="site-footer">
+    <p>Made with <span class="footer-heart">❤️</span> for Sayang</p>
+    <p class="footer-small">27 Mei &nbsp;•&nbsp; Always &amp; Forever</p>
+</footer>
+
+<!-- Letter lines for JS typewriter -->
+<script>
+    const letterLines = [
+        "Hai sayang,",
+        "",
+        "Selamat ulang tahun, kamu yang paling berarti...",
+        "",
+        "Di hari yang istimewa ini, aku ingin kamu tahu",
+        "bahwa kehadiranmu dalam hidupku adalah",
+        "anugerah terindah yang pernah aku terima.",
+        "",
+        "Setiap pagi terasa lebih berwarna karena ada kamu.",
+        "Setiap malam terasa lebih hangat karena ingat kamu.",
+        "Dan setiap detik, aku bersyukur memilikimu.",
+        "",
+        "Terima kasih sudah menjadi kamu.",
+        "Terima kasih sudah mencintaiku apa adanya.",
+        "Terima kasih sudah hadir dan tinggal.",
+        "",
+        "Semoga di usiamu yang baru ini,",
+        "kamu selalu sehat, selalu bahagia,",
+        "dan selalu tahu betapa besar aku menyayangimu.",
+        "",
+        "Dengan segenap cintaku,",
+        "\u2014 Aku"
+    ];
+</script>
+
+<!-- Main JavaScript -->
+<script src="js/script.js"></script>
+</body>
+</html>
