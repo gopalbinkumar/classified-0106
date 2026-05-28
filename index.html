@@ -23,17 +23,43 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- ============================================================ -->
-    <!-- LOADING SCREEN                                               -->
-    <!-- ============================================================ -->
-    <div id="loading-screen">
-      <div class="loading-content">
-        <div class="loading-heart">❤️</div>
-        <div class="loading-text">Menyiapkan kejutan untukmu...</div>
-        <div class="loading-bar"><div class="loading-progress"></div></div>
+    <div id="birthday-surprise">
+      <div class="party-popper left">
+        <i class="fa-solid fa-party-horn"></i>
+      </div>
+
+      <div class="party-popper right">
+        <i class="fa-solid fa-party-horn"></i>
       </div>
     </div>
 
+    <!-- ============================================================ -->
+    <!-- LOADING SCREEN - CLASSIFIED / HACKER STYLE                   -->
+    <!-- ============================================================ -->
+    <div id="loading-screen">
+      <div class="loading-content">
+        <div class="loading-terminal">
+          <div class="terminal-header">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="terminal-body">
+            <div class="terminal-line">ACCESSING CLASSIFIED FILE...</div>
+            <div class="terminal-line">VERIFYING CLEARANCE LEVEL...</div>
+            <div class="terminal-line">DECRYPTING MEMORY ARCHIVE...</div>
+            <div class="terminal-line success">ACCESS GRANTED</div>
+          </div>
+        </div>
+
+        <div class="loading-text">Initializing surprise protocol...</div>
+
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+      </div>
+    </div>
     <!-- ============================================================ -->
     <!-- FLOATING HEARTS CONTAINER                                    -->
     <!-- ============================================================ -->
@@ -62,9 +88,9 @@
     <section id="hero" class="section-hero">
       <div class="hero-bg-overlay"></div>
       <div class="hero-content">
-        <div class="hero-badge">
+        <!-- <div class="hero-badge">
           Special Day <i class="fa-solid fa-cake-candles"></i>
-        </div>
+        </div> -->
         <h2 class="hero-subtitle">Happy Birthday</h2>
         <h1 class="hero-name">Sayang</h1>
         <div class="hero-divider">
@@ -569,6 +595,7 @@
     </script>
 
     <!-- Main JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
