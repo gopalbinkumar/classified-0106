@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Happy Birthday Sayang 🎂" />
-    <link rel="icon" type="image/png" href="assets/birthday-cake.png" />
-    <title>Happy Birthday Sayang</title>
+    <meta name="description" content="..." />
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+    <title>...</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,7 +38,7 @@
     <!-- ============================================================ -->
     <div id="loading-screen">
       <div class="loading-content">
-        <div class="loading-terminal">
+        <div class="loading-terminal" style="display: none">
           <div class="terminal-header">
             <span></span>
             <span></span>
@@ -53,13 +53,64 @@
           </div>
         </div>
 
-        <div class="loading-text">Initializing surprise protocol...</div>
+        <div class="loading-text">Initializing...</div>
 
         <div class="loading-bar">
           <div class="loading-progress"></div>
         </div>
       </div>
     </div>
+
+    <!-- ============================================================ -->
+    <!-- VERIFICATION SCREEN - TERMINAL STYLE                         -->
+    <!-- ============================================================ -->
+    <div id="verification-screen">
+      <div class="verify-terminal">
+        <div class="verify-line muted">CLASSIFIED v01.06</div>
+        <div class="verify-line muted">SECURE CONNECTION ESTABLISHED...</div>
+        <div class="verify-line success">ACCESS GATEWAY READY</div>
+
+        <br />
+
+        <div class="verify-line" id="verify-question-text">
+          > QUESTION 1: What is your nickname?
+        </div>
+
+        <div class="verify-input-row">
+          <span class="verify-prompt">></span>
+          <input type="text" id="verify-answer" autocomplete="off" autofocus />
+        </div>
+
+        <div id="verify-error"></div>
+
+        <br />
+
+        <div class="verify-line muted">
+          SECURITY CHECK: <span id="verify-step">1</span>/4
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- FINAL ACCESS LOADING SCREEN                                  -->
+    <!-- ============================================================ -->
+    <div id="access-loading-screen">
+      <div class="access-loading-content">
+        <div class="access-title">ACCESS GRANTED</div>
+        <div class="access-subtitle">Opening classified birthday file...</div>
+
+        <div class="access-code">
+          <div>> DECRYPTING LOVE ARCHIVE...</div>
+          <div>> LOADING MEMORY FRAGMENTS...</div>
+          <div>> PREPARING SURPRISE SEQUENCE...</div>
+        </div>
+
+        <div class="access-loading-bar">
+          <div class="access-loading-progress"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- ============================================================ -->
     <!-- FLOATING HEARTS CONTAINER                                    -->
     <!-- ============================================================ -->
@@ -96,7 +147,9 @@
         <div class="hero-divider">
           <span>♡</span><span>♡</span><span>♡</span>
         </div>
-        <p class="hero-tagline">For the most special person in my life.</p>
+        <p class="hero-tagline">
+          Happy 21st Birthday to the girl who makes my world brighter every day.
+        </p>
         <button class="btn-journey" onclick="scrollToNext('letter')">
           <span>Begin the Story</span>
           <svg
@@ -118,7 +171,7 @@
     <section id="letter" class="section-letter">
       <div class="container">
         <div class="section-header reveal-up">
-          <span class="section-tag">💌 For You</span>
+          <span class="section-tag">For You</span>
           <h2 class="section-title">My Letter to You</h2>
         </div>
         <div class="letter-card reveal-up">
@@ -128,96 +181,108 @@
             <!-- Diisi oleh JS typewriter -->
           </div>
           <div class="letter-seal">
-            <span>💌</span>
+            <span><i class="fa-solid fa-envelope"></i></span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================ -->
-    <!-- SECTION 3: TIMELINE KENANGAN                                 -->
+    <!-- SECTION 3: TOP SECRET FACTS                                  -->
     <!-- ============================================================ -->
-    <section id="timeline" class="section-timeline">
+    <section id="secret-facts" class="section-secret-facts">
       <div class="container">
         <div class="section-header reveal-up">
-          <span class="section-tag">🌸 Our Journey</span>
-          <h2 class="section-title">Beautiful Memories</h2>
+          <span class="section-tag">Little Things</span>
+          <h2 class="section-title">Things That Make Her Special</h2>
         </div>
-        <div class="timeline-wrapper">
-          <div class="timeline-line"></div>
 
-          <div class="timeline-item reveal-up" data-index="0">
-            <div class="timeline-dot"><span>✨</span></div>
-            <div class="timeline-card">
-              <div class="timeline-date">August 2022</div>
-              <h3 class="timeline-title">First Meeting</h3>
-              <p class="timeline-story">
-                Waktu itu aku tidak tahu, pertemuan kecil itu akan mengubah
-                seluruh hidupku. Senyummu adalah hal pertama yang aku
-                perhatikan.
-              </p>
+        <div class="facts-slider-wrapper reveal-up">
+          <button class="facts-nav prev" onclick="scrollFacts(-1)">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="facts-grid" id="factsGrid">
+            <div class="fact-card">
+              <div class="fact-code"><i class="fa-solid fa-sun"></i></div>
+              <h3>Her Smile</h3>
+              <p>Can instantly make my day feel better.</p>
+            </div>
+
+            <div class="fact-card">
+              <div class="fact-code"><i class="fa-solid fa-leaf"></i></div>
+              <h3>Her Laugh</h3>
+              <p>One of the sweetest sounds I could ever hear.</p>
+            </div>
+
+            <div class="fact-card">
+              <div class="fact-code"><i class="fa-solid fa-heart"></i></div>
+              <h3>Her Heart</h3>
+              <p>Kind, warm, and more beautiful than she realizes.</p>
+            </div>
+
+            <div class="fact-card">
+              <div class="fact-code"><i class="fa-solid fa-star"></i></div>
+              <h3>Her Presence</h3>
+              <p>Makes ordinary moments feel special.</p>
+            </div>
+
+            <div class="fact-card">
+              <div class="fact-code"><i class="fa-solid fa-paw"></i></div>
+              <h3>Her Cuteness</h3>
+              <p>Dangerously adorable and impossible to resist.</p>
+            </div>
+
+            <div class="fact-card">
+              <div class="fact-code">
+                <i class="fa-solid fa-face-smile-beam"></i>
+              </div>
+              <h3>Her Expressions</h3>
+              <p>Even the smallest reactions from her are unbelievably cute.</p>
+            </div>
+
+            <div class="fact-card">
+              <div class="fact-code">
+                <i class="fa-solid fa-mug-hot"></i>
+              </div>
+              <h3>Her Comfort Presence</h3>
+              <p>Being around her somehow makes everything feel calmer.</p>
+            </div>
+
+            <div class="fact-card">
+              <div class="fact-code">
+                <i class="fa-solid fa-music"></i>
+              </div>
+              <h3>Her Voice</h3>
+              <p>One of the few sounds that can instantly make me smile.</p>
+            </div>
+
+            <div class="fact-card">
+              <div class="fact-code">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <h3>Her Energy</h3>
+              <p>She brings warmth and happiness wherever she goes.</p>
+            </div>
+
+            <div class="fact-card">
+              <div class="fact-code">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <h3>Her Kindness</h3>
+              <p>She cares deeply, even in ways she doesn't realize.</p>
+            </div>
+
+            <div class="fact-card">
+              <div class="fact-code"><i class="fa-solid fa-file"></i></div>
+              <h3>Her Mission</h3>
+              <p>To keep being herself, because she is already enough.</p>
             </div>
           </div>
 
-          <div class="timeline-item reveal-up" data-index="1">
-            <div class="timeline-dot"><span>💌</span></div>
-            <div class="timeline-card">
-              <div class="timeline-date">September 2022</div>
-              <h3 class="timeline-title">Pertama Chat</h3>
-              <p class="timeline-story">
-                Pesan pertamamu membuatku gugup sekaligus senang. Aku baca
-                berkali-kali sambil senyum sendiri seperti orang bodoh.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal-up" data-index="2">
-            <div class="timeline-dot"><span>🌸</span></div>
-            <div class="timeline-card">
-              <div class="timeline-date">November 2022</div>
-              <h3 class="timeline-title">Pertama Bertemu</h3>
-              <p class="timeline-story">
-                Jantungku berdebar keras saat melihatmu datang. Kamu bahkan
-                lebih indah dari yang aku bayangkan.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal-up" data-index="3">
-            <div class="timeline-dot"><span>🌅</span></div>
-            <div class="timeline-card">
-              <div class="timeline-date">Desember 2022</div>
-              <h3 class="timeline-title">Pertama Jalan Bersama</h3>
-              <p class="timeline-story">
-                Hari itu terasa ajaib. Waktu berlalu begitu cepat ketika
-                bersamamu, dan aku tidak ingin pulang.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal-up" data-index="4">
-            <div class="timeline-dot"><span>💑</span></div>
-            <div class="timeline-card">
-              <div class="timeline-date">Januari 2023</div>
-              <h3 class="timeline-title">Resmi Bersama</h3>
-              <p class="timeline-story">
-                Hari paling indah dalam hidupku. Kamu bilang iya, dan sejak saat
-                itu, kamu adalah rumahku.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal-up" data-index="5">
-            <div class="timeline-dot"><span>🎂</span></div>
-            <div class="timeline-card">
-              <div class="timeline-date">27 Mei</div>
-              <h3 class="timeline-title">Hari Ini</h3>
-              <p class="timeline-story">
-                Setiap hari bersamamu adalah hadiah. Hari ini, aku ingin
-                merayakan keberadaanmu di dunia ini — dan di hidupku.
-              </p>
-            </div>
-          </div>
+          <button class="facts-nav next" onclick="scrollFacts(1)">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -406,17 +471,16 @@
     <section id="reasons" class="section-reasons">
       <div class="container">
         <div class="section-header reveal-up">
-          <span class="section-tag">💖 Dari Hatiku</span>
-          <h2 class="section-title">Alasan Aku Menyayangimu</h2>
+          <span class="section-tag">From My Heart</span>
+          <h2 class="section-title">Reasons Why I Love You</h2>
         </div>
         <div class="reasons-card reveal-up">
-          <div class="reasons-icon">💝</div>
           <p id="reason-text" class="reason-text">
-            Tekan tombol untuk melihat alasannya...
+            Click the button below and see if you can guess them all!
           </p>
-          <div class="reason-counter"><span id="reason-num">0</span> / 8</div>
+
           <button class="btn-reason" onclick="showNextReason()">
-            Lihat Alasan Berikutnya 💕
+            <span>Show Next</span>
           </button>
         </div>
       </div>
@@ -424,14 +488,14 @@
 
     <script>
       const reasons = [
-        "Aku suka senyummu yang bisa menerangkan hariku \u2764\uFE0F",
-        "Aku suka cara kamu tertawa sampai matamu menyipit \u2764\uFE0F",
-        "Aku suka perhatianmu yang selalu membuatku merasa dicinta \u2764\uFE0F",
-        "Aku suka cara kamu mendukungku di setiap langkahku \u2764\uFE0F",
-        'Aku suka caramu bilang "hati-hati" setiap kali aku pergi \u2764\uFE0F',
-        "Aku suka saat kamu cemberut lucu karena hal-hal kecil \u2764\uFE0F",
-        "Aku suka kehangatanmu yang selalu membuatku merasa aman \u2764\uFE0F",
-        "Aku suka semuanya tentangmu, tanpa terkecuali \u2764\uFE0F",
+        "Can instantly make my day feel better",
+        "Can make me laugh even on my worst days",
+        "Always knows how to make me feel special",
+        "Supports me unconditionally through everything",
+        "Has a way of making even ordinary moments feel magical",
+        "Brings out the best in me and makes me want to be better",
+        "Can make me feel safe and loved in any situation",
+        "Makes every moment with her feel like a gift",
       ];
     </script>
 
@@ -476,60 +540,67 @@
     <section id="wishes" class="section-wishes">
       <div class="container">
         <div class="section-header reveal-up">
-          <span class="section-tag">🎂 Doa &amp; Harapan</span>
-          <h2 class="section-title">Ucapan Ulang Tahun</h2>
+          <span class="section-tag">Wishes & Prayers</span>
+          <h2 class="section-title">Birthday Wishes</h2>
         </div>
+
         <div class="wishes-card reveal-up">
-          <div class="wishes-icon">🎂</div>
+          <div class="wishes-icon"><img src="assets/birthday-cake.png" alt="Birthday Cake" /></div>
+
           <div class="wishes-body">
-            <p>Di hari istimewamu ini, 27 Mei,</p>
+            <p>On your special day, June 1st,</p>
+
             <p>
-              aku memanjatkan doa yang paling tulus dari lubuk hatiku yang
-              paling dalam.
+              I send my sincerest prayers from the deepest part of my heart.
             </p>
+
             <br />
+
             <div class="wishes-list">
               <div class="wish-item">
                 <span>🌸</span>
                 <p>
-                  Semoga setiap hari dalam hidupmu penuh dengan kebahagiaan yang
-                  tak terhitung.
+                  May every day of your life be filled with endless happiness.
                 </p>
               </div>
+
               <div class="wish-item">
                 <span>💪</span>
                 <p>
-                  Semoga kesehatanmu selalu terjaga, kekuatanmu tak pernah
-                  padam.
+                  May you always stay healthy, and may your strength never fade.
                 </p>
               </div>
+
               <div class="wish-item">
                 <span>⭐</span>
-                <p>
-                  Semoga semua impian dan cita-citamu terwujud satu per satu.
-                </p>
+                <p>May all your dreams and aspirations come true one by one.</p>
               </div>
+
               <div class="wish-item">
                 <span>💕</span>
                 <p>
-                  Semoga cinta kita terus tumbuh, semakin dalam setiap harinya.
+                  May our love continue to grow deeper with every passing day.
                 </p>
               </div>
+
               <div class="wish-item">
                 <span>✨</span>
                 <p>
-                  Semoga hidupmu selalu diterangi cahaya dan dikelilingi
-                  orang-orang yang mencintaimu.
+                  May your life always be filled with light and surrounded by
+                  people who truly love you.
                 </p>
               </div>
             </div>
+
             <br />
-            <p class="wishes-closing">
-              Selamat ulang tahun, cintaku. Semoga kamu tahu betapa berharganya
-              kamu bagiku.
+
+            <p class="wishes-closing" style="text-align: center">
+              Happy Birthday, my love. I hope you always know how precious you
+              are to me.
             </p>
           </div>
-          <div class="wishes-signature">— dengan cinta, Aku 💌</div>
+
+          <!-- <div class="wishes-signature">— with love, Me 💌</div> -->
         </div>
       </div>
     </section>
@@ -573,7 +644,8 @@
         "",
         "Happy Birthday to the most special person in my life...",
         "",
-        "On this special day, I want you to know",
+        "On this special day,",
+        "I want you to know",
         "that having you in my life is",
         "the greatest gift I have ever received.",
         "",
@@ -590,7 +662,7 @@
         "and I hope you always know how much I love you.",
         "",
         "With all my love,",
-        "— Me",
+        "— your bf",
       ];
     </script>
 

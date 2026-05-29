@@ -1,32 +1,196 @@
-/**
- * BIRTHDAY WEBSITE - js/script.js
- * Romantic Birthday Website — All JavaScript Functionality
- * ============================================================
- */
-
 "use strict";
 
+const DEV_SKIP_INTRO = false; // Set to true to skip loading and verification screens for faster testing
+const ENABLE_FLOATING_HEARTS = false; // Set to false to disable floating hearts for better performance on low-end devices
+
+if (DEV_SKIP_INTRO) {
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("unlocked");
+
+    const loader = document.getElementById("loading-screen");
+    const verify = document.getElementById("verification-screen");
+    const access = document.getElementById("access-loading-screen");
+
+    if (loader) loader.style.display = "none";
+    if (verify) verify.style.display = "none";
+    if (access) access.style.display = "none";
+
+    generateHeroStars();
+    if (ENABLE_FLOATING_HEARTS) {
+      startFloatingHearts();
+    }
+    initScrollReveal();
+    initTypewriterObserver();
+  });
+}
 /* ============================================================
    1. LOADING SCREEN
    ============================================================ */
 window.addEventListener("load", function () {
+  if (DEV_SKIP_INTRO) return;
+
   setTimeout(function () {
     const loader = document.getElementById("loading-screen");
+    const verifyScreen = document.getElementById("verification-screen");
 
-    if (loader) {
-      loader.classList.add("hidden");
-
-      generateHeroStars();
-      startFloatingHearts();
-      initScrollReveal();
-      initTypewriterObserver();
-
-      // Muncul setelah loading hilang
-      setTimeout(() => {
-        launchBirthdayPopper();
-      }, 300);
+    // munculkan verifikasi dulu
+    if (verifyScreen) {
+      verifyScreen.classList.add("active");
     }
-  }, 8000);
+
+    // baru hilangkan loading screen sedikit setelahnya
+    setTimeout(() => {
+      if (loader) {
+        loader.classList.add("hidden");
+      }
+    }, 100);
+  }, 4500);
+});
+
+let verifyCurrentStep = 1;
+
+const verificationQuestions = {
+  1: "QUESTION 1: What is your nickname?",
+  2: "QUESTION 2: What is your birthday date? (dd/mm)",
+  3: "QUESTION 3: Who is your favorite person?",
+  4: "QUESTION 4: What is your favorite color?",
+
+};
+
+const verificationAnswers = {
+  1: ["sinta", "yashinta"],
+  2: ["1 june", "01 june", "01/06", "1/6"],
+  3: ["dzaki", "gopal"],
+  4: ["pink", "merah muda"],
+};
+
+function normalizeAnswer(value) {
+  return value.toLowerCase().trim().replace(/\s+/g, " ");
+}
+
+function checkVerification() {
+  const input = document.getElementById("verify-answer");
+  const error = document.getElementById("verify-error");
+  const questionText = document.getElementById("verify-question-text");
+  const stepText = document.getElementById("verify-step");
+
+  if (!input) return;
+
+  const userAnswer = normalizeAnswer(input.value);
+  const validAnswers = verificationAnswers[verifyCurrentStep];
+
+  if (!validAnswers.includes(userAnswer)) {
+    if (error) {
+      error.textContent = "ACCESS DENIED. INVALID RESPONSE.";
+    }
+
+    input.value = "";
+    input.focus();
+
+    return;
+  }
+
+  if (error) {
+    error.textContent = "ACCESS GRANTED FOR STEP " + verifyCurrentStep + ".";
+  }
+
+  if (verifyCurrentStep < 4) {
+    verifyCurrentStep++;
+
+    setTimeout(() => {
+      if (questionText) {
+        questionText.textContent =
+          "> " + verificationQuestions[verifyCurrentStep];
+      }
+
+      if (stepText) {
+        stepText.textContent = verifyCurrentStep;
+      }
+
+      if (error) {
+        error.textContent = "";
+      }
+
+      input.value = "";
+      input.focus();
+    }, 1000);
+
+    return;
+  }
+
+  if (error) {
+    error.textContent = "FULL ACCESS GRANTED.";
+  }
+
+  setTimeout(() => {
+    unlockBirthdayWebsite();
+  }, 800);
+}
+
+function unlockBirthdayWebsite() {
+  const verifyScreen = document.getElementById("verification-screen");
+  const accessLoadingScreen = document.getElementById("access-loading-screen");
+
+  if (verifyScreen) {
+    verifyScreen.classList.remove("active");
+    verifyScreen.classList.add("hidden");
+
+    setTimeout(() => {
+      verifyScreen.style.display = "none";
+    }, 400);
+  }
+
+  if (accessLoadingScreen) {
+    const accessProgress = accessLoadingScreen.querySelector(
+      ".access-loading-progress",
+    );
+
+    if (accessProgress) {
+      accessProgress.style.animation = "none";
+      accessProgress.offsetHeight; // force reflow
+      accessProgress.style.animation = "";
+    }
+
+    setTimeout(() => {
+      accessLoadingScreen.classList.add("active");
+    }, 300);
+  }
+
+  setTimeout(() => {
+    if (accessLoadingScreen) {
+      accessLoadingScreen.classList.remove("active");
+      accessLoadingScreen.classList.add("hidden");
+
+      setTimeout(() => {
+        accessLoadingScreen.style.display = "none";
+      }, 500);
+    }
+
+    document.body.classList.add("unlocked");
+
+    generateHeroStars();
+    if (ENABLE_FLOATING_HEARTS) {
+      startFloatingHearts();
+    }
+    initScrollReveal();
+    initTypewriterObserver();
+
+    setTimeout(() => {
+      launchBirthdayPopper();
+    }, 500);
+  }, 3600);
+}
+
+document.addEventListener("keydown", function (e) {
+  const verifyScreen = document.getElementById("verification-screen");
+
+  if (
+    verifyScreen &&
+    verifyScreen.classList.contains("active") &&
+    e.key === "Enter"
+  ) {
+    checkVerification();
+  }
 });
 
 /* ============================================================
@@ -619,4 +783,17 @@ function launchCornerConfetti() {
   }
 
   frame();
+}
+
+function scrollFacts(direction) {
+  const grid = document.getElementById("factsGrid");
+
+  if (!grid) return;
+
+  const scrollAmount = 320;
+
+  grid.scrollBy({
+    left: direction * scrollAmount,
+    behavior: "smooth",
+  });
 }
