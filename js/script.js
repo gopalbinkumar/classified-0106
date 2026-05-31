@@ -119,7 +119,7 @@ function checkVerification() {
   }
 
   if (error) {
-    error.textContent = "FULL ACCESS GRANTED.";
+    error.textContent = "CORRECT";
   }
 
   setTimeout(() => {
