@@ -66,18 +66,18 @@
     <!-- ============================================================ -->
     <div id="verification-screen">
       <div class="verify-terminal">
-        <div class="verify-line muted">CLASSIFIED v01.06</div>
+        <!-- <div class="verify-line muted">CLASSIFIED v01.06</div>
         <div class="verify-line muted">SECURE CONNECTION ESTABLISHED...</div>
-        <div class="verify-line success">ACCESS GATEWAY READY</div>
+        <div class="verify-line success">ACCESS GATEWAY READY</div> -->
 
         <br />
 
         <div class="verify-line" id="verify-question-text">
-          > QUESTION 1: What is your nickname?
+          What is your nickname?
         </div>
 
         <div class="verify-input-row">
-          <span class="verify-prompt">></span>
+          <span class="verify-prompt"></span>
           <input type="text" id="verify-answer" autocomplete="off" autofocus />
         </div>
 
@@ -86,7 +86,7 @@
         <br />
 
         <div class="verify-line muted">
-          SECURITY CHECK: <span id="verify-step">1</span>/4
+          CHECK: <span id="verify-step">1</span>/4
         </div>
       </div>
     </div>
@@ -96,14 +96,14 @@
     <!-- ============================================================ -->
     <div id="access-loading-screen">
       <div class="access-loading-content">
-        <div class="access-title">ACCESS GRANTED</div>
-        <div class="access-subtitle">Opening classified birthday file...</div>
+        <div class="access-title">Almost There</div>
+        <div class="access-subtitle">Preparing your birthday surprise...</div>
 
-        <div class="access-code">
-          <div>> DECRYPTING LOVE ARCHIVE...</div>
-          <div>> LOADING MEMORY FRAGMENTS...</div>
-          <div>> PREPARING SURPRISE SEQUENCE...</div>
-        </div>
+        <!-- <div class="access-code">
+          <div>Collecting beautiful memories...</div>
+          <div>Loading heartfelt wishes...</div>
+          <div>Preparing the final surprise...</div>
+        </div> -->
 
         <div class="access-loading-bar">
           <div class="access-loading-progress"></div>
@@ -290,7 +290,7 @@
     <!-- ============================================================ -->
     <!-- SECTION 4: GALERI FOTO                                       -->
     <!-- ============================================================ -->
-    <section id="gallery" class="section-gallery">
+    <section id="gallery" class="section-gallery" style="display: none">
       <div class="container">
         <div class="section-header reveal-up">
           <span class="section-tag">📸 Momen Kita</span>
@@ -502,7 +502,7 @@
     <!-- ============================================================ -->
     <!-- SECTION 6: VIDEO KENANGAN                                    -->
     <!-- ============================================================ -->
-    <section id="video" class="section-video">
+    <section id="video" class="section-video" style="display: none">
       <div class="container">
         <div class="section-header reveal-up">
           <span class="section-tag">🎥 Momen Bergerak</span>
@@ -545,7 +545,9 @@
         </div>
 
         <div class="wishes-card reveal-up">
-          <div class="wishes-icon"><img src="assets/birthday-cake.png" alt="Birthday Cake" /></div>
+          <div class="wishes-icon">
+            <img src="assets/birthday-cake.png" alt="Birthday Cake" />
+          </div>
 
           <div class="wishes-body">
             <p>On your special day, June 1st,</p>
@@ -608,7 +610,7 @@
     <!-- ============================================================ -->
     <!-- SECTION 8: PESAN TERAKHIR                                    -->
     <!-- ============================================================ -->
-    <section id="final" class="section-final">
+    <section id="final" class="section-final" style="display: none">
       <div class="container">
         <div class="final-content reveal-up">
           <div class="final-top-hearts">💖 💕 💖</div>

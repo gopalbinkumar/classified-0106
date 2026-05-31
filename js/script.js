@@ -50,10 +50,10 @@ window.addEventListener("load", function () {
 let verifyCurrentStep = 1;
 
 const verificationQuestions = {
-  1: "QUESTION 1: What is your nickname?",
-  2: "QUESTION 2: What is your birthday date? (dd/mm)",
-  3: "QUESTION 3: Who is your favorite person?",
-  4: "QUESTION 4: What is your favorite color?",
+  1: "What is your nickname?",
+  2: "What is your birthday date? (dd/mm)",
+  3: "Who is your favorite person?",
+  4: "What is your favorite color?",
 
 };
 

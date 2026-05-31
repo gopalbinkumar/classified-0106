@@ -26,6 +26,338 @@
   --max-width: 768px;
 }
 
+/* ==========================================================
+   ROMANTIC LOADING / VERIFICATION THEME
+========================================================== */
+
+/* ---------- Loading Screen ---------- */
+
+#loading-screen,
+#verification-screen,
+#access-loading-screen {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 107, 157, 0.18),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #fff5f8 0%,
+      #ffd6e5 55%,
+      #ff8fb5 100%
+    ) !important;
+}
+
+/* Hilangkan scanline hacker */
+
+#loading-screen::before,
+#verification-screen::before,
+#access-loading-screen::before {
+  display: none;
+}
+
+#loading-screen::after,
+#verification-screen::after {
+  display: none;
+}
+
+/* ---------- Loading Terminal ---------- */
+
+.loading-terminal {
+  background: rgba(255, 255, 255, 0.85) !important;
+
+  border: 1px solid rgba(255, 107, 157, 0.25) !important;
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 12px 40px rgba(255, 107, 157, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+.terminal-header {
+  background: rgba(255, 214, 229, 0.6) !important;
+  border-bottom: 1px solid rgba(255, 107, 157, 0.15) !important;
+}
+
+.terminal-header span {
+  background: var(--primary-pink) !important;
+  box-shadow: 0 0 10px rgba(255, 107, 157, 0.4) !important;
+}
+
+.terminal-line {
+  color: var(--deep-pink) !important;
+  text-shadow: none !important;
+}
+
+.terminal-line.success {
+  color: var(--primary-pink) !important;
+  font-weight: 700;
+}
+
+/* ---------- Loading Text ---------- */
+
+.loading-text {
+  color: var(--primary-pink) !important;
+
+  text-shadow: none !important;
+
+  font-family: var(--font-body) !important;
+
+  letter-spacing: 0.08rem;
+}
+
+/* ---------- Progress Bar ---------- */
+
+.loading-bar,
+.access-loading-bar {
+  height: 18px !important;
+
+  background: rgba(255, 255, 255, 0.75) !important;
+
+  border: 2px solid var(--primary-pink) !important;
+
+  border-radius: 999px !important;
+
+  box-shadow:
+    0 6px 20px rgba(255, 107, 157, 0.15) !important;
+}
+
+.loading-bar::before,
+.loading-bar::after,
+.access-loading-bar::before,
+.access-loading-bar::after {
+  display: none;
+}
+
+.loading-progress,
+.access-loading-progress {
+  border-radius: 999px !important;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary-pink),
+    var(--mid-pink),
+    var(--accent-gold)
+  ) !important;
+
+  box-shadow: none !important;
+}
+
+/* ---------- Verification Screen ---------- */
+
+.verify-terminal {
+  background: rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(14px);
+
+  padding: 2rem;
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(255, 107, 157, 0.2);
+
+  box-shadow:
+    0 15px 50px rgba(255, 107, 157, 0.15);
+
+  color: var(--dark-text) !important;
+
+  text-shadow: none !important;
+}
+
+.verify-line {
+  color: var(--dark-text) !important;
+}
+
+.verify-line.muted {
+  color: #9b7480 !important;
+}
+
+.verify-line.success {
+  color: var(--primary-pink) !important;
+  font-weight: 700;
+}
+
+.verify-prompt {
+  color: var(--primary-pink) !important;
+}
+
+#verify-answer {
+  color: var(--deep-pink) !important;
+
+  caret-color: var(--primary-pink) !important;
+
+  text-shadow: none !important;
+}
+
+#verify-answer::placeholder {
+  color: #cba2ae !important;
+}
+
+#verify-error {
+  color: #ff5f7d !important;
+
+  text-shadow: none !important;
+}
+
+/* ---------- Access Loading ---------- */
+
+.access-loading-content {
+  background: rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(14px);
+
+  padding: 2rem;
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(255, 107, 157, 0.2);
+
+  box-shadow:
+    0 15px 50px rgba(255, 107, 157, 0.15);
+
+  color: var(--dark-text) !important;
+
+  text-shadow: none !important;
+}
+
+.access-title {
+  color: var(--primary-pink) !important;
+
+  font-family: var(--font-display);
+
+  font-size: 2.2rem;
+
+  letter-spacing: normal;
+
+  text-transform: none;
+}
+
+.access-subtitle {
+  color: #8d6572 !important;
+}
+
+.access-code {
+  border-left: 3px solid var(--primary-pink) !important;
+
+  color: var(--dark-text) !important;
+}
+
+/* ---------- Floating Hearts ---------- */
+
+#loading-screen::after,
+#verification-screen::after,
+#access-loading-screen::after {
+  content: "💖 💕 💗 💝 💖 💕 💗 💝";
+
+  display: block;
+
+  position: absolute;
+
+  top: 20px;
+  left: 0;
+
+  width: 100%;
+
+  text-align: center;
+
+  font-size: 1.2rem;
+
+  opacity: 0.35;
+
+  animation: heartFloat 12s linear infinite;
+}
+
+@keyframes heartFloat {
+  from {
+    transform: translateX(-20%);
+  }
+
+  to {
+    transform: translateX(20%);
+  }
+}
+
+/* ==========================================================
+   ROMANTIC TYPOGRAPHY
+========================================================== */
+
+/* Loading */
+
+.loading-text {
+  font-family: var(--font-display) !important;
+  font-size: 2.2rem !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  font-weight: normal !important;
+}
+
+/* Terminal */
+
+.terminal-body,
+.terminal-line {
+  font-family: var(--font-body) !important;
+  font-size: 0.95rem !important;
+  letter-spacing: normal !important;
+  line-height: 1.8 !important;
+}
+
+.terminal-line::before {
+  content: "💖 " !important;
+}
+
+/* Verification */
+
+.verify-terminal {
+  font-family: var(--font-body) !important;
+}
+
+.verify-line {
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  letter-spacing: normal !important;
+}
+
+.verify-line.success {
+  font-family: var(--font-display) !important;
+  font-size: 2rem !important;
+}
+
+#verify-answer {
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+}
+
+/* Access Loading */
+
+.access-loading-content {
+  font-family: var(--font-body) !important;
+}
+
+.access-title {
+  font-family: var(--font-display) !important;
+  font-size: 3rem !important;
+  font-weight: normal !important;
+}
+
+.access-subtitle {
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+}
+
+.access-code {
+  font-family: var(--font-body) !important;
+  font-size: 0.95rem !important;
+}
+
+/* Step Counter */
+
+#verify-step {
+  color: var(--primary-pink);
+  font-weight: 700;
+}
+
 /* ── Reset & Base ────────────────────────────────────────────── */
 *,
 *::before,
@@ -61,63 +393,54 @@ button {
   font-family: var(--font-body);
 }
 
-/* ── Loading Screen: Romantic Pink Theme ───────────────────── */
-#loading-screen,
-#verification-screen,
-#access-loading-screen {
+/* ── Loading Screen: Classified Hacker Theme ─────────────────── */
+#loading-screen {
   position: fixed;
   inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(0, 255, 120, 0.12), transparent 35%),
+    linear-gradient(135deg, #020403 0%, #050f08 55%, #000000 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.45), transparent 34%),
-    radial-gradient(circle at 80% 12%, rgba(247, 200, 115, 0.22), transparent 30%),
-    radial-gradient(circle at center, rgba(255, 107, 157, 0.2), transparent 42%),
-    linear-gradient(135deg, #fff5f8 0%, #ffd6e5 55%, #ff8fb5 100%);
-}
-
-#loading-screen::before,
-#verification-screen::before,
-#access-loading-screen::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(rgba(255, 255, 255, 0.55) 1px, transparent 1px),
-    radial-gradient(rgba(255, 107, 157, 0.18) 1px, transparent 1px);
-  background-size: 46px 46px, 72px 72px;
-  background-position: 0 0, 18px 22px;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-#loading-screen::after,
-#verification-screen::after,
-/* #access-loading-screen::after {
-  content: "💖 💕 💗 💝 💖 💕 💗 💝";
-  position: absolute;
-  top: 1.4rem;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.15rem;
-  opacity: 0.38;
-  pointer-events: none;
-  animation: heartFloat 12s linear infinite alternate;
-} */
-
-#loading-screen {
   z-index: 9999;
+  overflow: hidden;
   transition:
     opacity 0.6s ease,
     visibility 0.6s ease;
 }
 
-#loading-screen.hidden,
-#verification-screen.hidden,
-#access-loading-screen.hidden {
+#loading-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 120, 0.06) 0px,
+    rgba(0, 255, 120, 0.06) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  opacity: 0.35;
+  pointer-events: none;
+  animation: scanlineMove 1.2s linear infinite;
+}
+
+#loading-screen::after {
+  /* content: "0106  CLASSIFIED  0106  ACCESS  MEMORY  LOVE  SYSTEM  "; */
+  position: absolute;
+  top: 10%;
+  left: -20%;
+  width: 140%;
+  color: rgba(0, 255, 120, 0.08);
+  font-family: monospace;
+  font-size: 1rem;
+  letter-spacing: 0.35rem;
+  white-space: nowrap;
+  animation: codeMove 8s linear infinite;
+}
+
+#loading-screen.hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -131,15 +454,14 @@ button {
 }
 
 .loading-terminal {
-  margin-bottom: 1.5rem;
-  overflow: hidden;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(255, 107, 157, 0.22);
-  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 255, 120, 0.45);
+  background: rgba(0, 0, 0, 0.72);
   box-shadow:
-    0 16px 50px rgba(255, 107, 157, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    0 0 25px rgba(0, 255, 120, 0.25),
+    inset 0 0 25px rgba(0, 255, 120, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
 }
 
 .terminal-header {
@@ -148,88 +470,143 @@ button {
   align-items: center;
   gap: 7px;
   padding: 0 12px;
-  background: rgba(255, 214, 229, 0.65);
-  border-bottom: 1px solid rgba(255, 107, 157, 0.16);
+  border-bottom: 1px solid rgba(0, 255, 120, 0.25);
+  background: rgba(0, 255, 120, 0.06);
 }
 
 .terminal-header span {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--primary-pink);
-  box-shadow: 0 0 10px rgba(255, 107, 157, 0.35);
+  background: #00ff78;
+  box-shadow: 0 0 10px rgba(0, 255, 120, 0.8);
 }
 
 .terminal-body {
-  padding: 1.25rem;
+  padding: 1.2rem;
   text-align: left;
-  font-family: var(--font-body);
+  font-family: "Courier New", monospace;
 }
 
 .terminal-line {
-  color: var(--deep-pink);
-  font-size: 0.95rem;
-  line-height: 1.8;
-  letter-spacing: normal;
+  color: #00ff78;
+  font-size: 0.78rem;
+  letter-spacing: 0.06rem;
+  line-height: 1.9;
+  text-shadow: 0 0 10px rgba(0, 255, 120, 0.75);
   opacity: 0;
   transform: translateY(8px);
   animation: terminalLine 0.35s ease forwards;
 }
 
 .terminal-line::before {
-  content: "💖 ";
+  content: "> ";
 }
 
-.terminal-line:nth-child(1) { animation-delay: 0.2s; }
-.terminal-line:nth-child(2) { animation-delay: 0.6s; }
-.terminal-line:nth-child(3) { animation-delay: 1s; }
-.terminal-line:nth-child(4) { animation-delay: 1.45s; }
+.terminal-line:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.terminal-line:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.terminal-line:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.terminal-line:nth-child(4) {
+  animation-delay: 1.45s;
+}
 
 .terminal-line.success {
-  color: var(--primary-pink);
-  font-weight: 700;
+  color: #b6ffcf;
 }
 
 .loading-text {
+  color: #00ff78;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
   margin-bottom: 1rem;
-  color: var(--primary-pink);
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: normal;
-  text-transform: none;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(0, 255, 120, 0.9);
+  animation: flicker 1.4s infinite alternate;
 }
 
-.loading-bar,
-.access-loading-bar {
-  position: relative;
+.loading-bar {
   width: 100%;
-  height: 18px;
-  padding: 3px;
+  height: 28px;
+
+  padding: 4px;
+
+  background: #020202;
+
+  border: 2px solid #00ff78;
+  border-radius: 0;
+
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.76);
-  border: 2px solid var(--primary-pink);
-  border-radius: 999px;
-  box-shadow: 0 8px 25px rgba(255, 107, 157, 0.16);
+
+  position: relative;
+
+  box-shadow:
+    0 0 10px rgba(0, 255, 120, 0.25),
+    inset 0 0 8px rgba(0, 255, 120, 0.12);
 }
 
-.loading-progress,
-.access-loading-progress {
-  height: 100%;
-  width: 0%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--primary-pink), var(--mid-pink), var(--accent-gold));
-  box-shadow: 0 0 14px rgba(255, 107, 157, 0.24);
+/* outline luar */
+
+.loading-bar::before {
+  content: "";
+
+  position: absolute;
+  inset: -7px;
+
+  border: 1px solid rgba(0, 255, 120, 0.25);
+
+  pointer-events: none;
+}
+
+/* garis kotak ala terminal */
+
+.loading-bar::after {
+  content: "";
+
+  position: absolute;
+  inset: 4px;
+
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(0, 255, 120, 0.08) 0px,
+    rgba(0, 255, 120, 0.08) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+
+  pointer-events: none;
 }
 
 .loading-progress {
+  height: 100%;
+  width: 0%;
+
+  border-radius: 0;
+
+  background: linear-gradient(90deg, #004d27 0%, #00ff78 50%, #6dffb1 100%);
+
+  box-shadow: 0 0 10px rgba(0, 255, 120, 0.45);
+
   animation: loadingBar 4s linear forwards;
 }
 
 @keyframes loadingBar {
-  from { width: 0%; }
-  to { width: 100%; }
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes terminalLine {
@@ -239,9 +616,38 @@ button {
   }
 }
 
-@keyframes heartFloat {
-  from { transform: translateX(-18%); }
-  to { transform: translateX(18%); }
+@keyframes scanlineMove {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes codeMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(20%);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 0.95;
+  }
+  75% {
+    opacity: 0.55;
+  }
 }
 
 /* ── Floating Hearts ─────────────────────────────────────────── */
@@ -928,7 +1334,7 @@ body.unlocked .section-hero {
   .facts-nav {
     display: none;
   }
-}
+} 
 
 /* ── SECTION 4: GALLERY ──────────────────────────────────────── */
 .section-gallery {
@@ -1303,20 +1709,19 @@ body.unlocked .section-hero {
   width: 110px;
   height: 110px;
 
-  margin: 0 auto 1.5rem;
+  margin: 0 auto;
 
   border-radius: 50%;
-  background: var(--light-pink);
-
-  box-shadow: 0 8px 25px rgba(255, 107, 157, 0.15);
+  background: rgba(255,255,255,0.08);
 }
 
 .wishes-icon img {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   display: block;
-  margin: 0;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 .wishes-body {
@@ -1710,12 +2115,28 @@ body.unlocked .section-hero {
   }
 }
 
-/* ── Verification Screen: Romantic Pink Theme ───────────────── */
+/* ── Verification Screen: Terminal Style ───────────────────── */
+
 #verification-screen {
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at center, rgba(0, 255, 120, 0.1), transparent 38%),
+    linear-gradient(135deg, #020403 0%, #050f08 55%, #000000 100%);
+
   z-index: 10000;
+
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
   transition:
     opacity 0.4s ease,
     visibility 0.4s ease;
@@ -1727,96 +2148,186 @@ body.unlocked .section-hero {
   pointer-events: auto;
 }
 
+#verification-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#verification-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 120, 0.06) 0px,
+    rgba(0, 255, 120, 0.06) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+
+  opacity: 0.35;
+  pointer-events: none;
+  animation: scanlineMove 1.2s linear infinite;
+}
+
+#verification-screen::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+
+  border: 1px solid rgba(0, 255, 120, 0.22);
+
+  box-shadow:
+    0 0 25px rgba(0, 255, 120, 0.12),
+    inset 0 0 25px rgba(0, 255, 120, 0.06);
+
+  pointer-events: none;
+}
+
 .verify-terminal {
   position: relative;
   z-index: 2;
+
   width: min(90%, 760px);
-  padding: 2rem;
-  color: var(--dark-text);
-  font-family: var(--font-body);
-  font-size: 1rem;
+
+  color: #00ff78;
+
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
   line-height: 1.8;
+
   text-align: left;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(255, 107, 157, 0.22);
-  border-radius: 26px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 18px 55px rgba(255, 107, 157, 0.16);
+
+  text-shadow: 0 0 10px rgba(0, 255, 120, 0.65);
 }
 
 .verify-line {
-  color: var(--dark-text);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  letter-spacing: normal;
+  color: #00ff78;
+  letter-spacing: 0.04rem;
 }
 
 .verify-line.muted {
-  color: #9b7480;
+  color: rgba(0, 255, 120, 0.65);
 }
 
 .verify-line.success {
-  display: block;
-  margin-bottom: 1rem;
-  color: var(--primary-pink);
-  font-family: var(--font-display);
-  font-size: 2.4rem;
-  font-weight: 400;
-  line-height: 1.2;
-  text-align: center;
+  color: #b6ffcf;
 }
 
 .verify-input-row {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-top: 0.7rem;
-  padding: 0.85rem 1rem;
-  background: rgba(255, 240, 245, 0.75);
-  border: 1px solid rgba(255, 107, 157, 0.18);
-  border-radius: 999px;
+  gap: 0.5rem;
+
+  margin-top: 0.6rem;
 }
 
 .verify-prompt {
-  color: var(--primary-pink);
+  color: #00ff78;
   font-weight: 700;
 }
 
 #verify-answer {
   flex: 1;
-  min-width: 0;
+
   background: transparent;
   border: none;
   outline: none;
-  color: var(--deep-pink);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  caret-color: var(--primary-pink);
+
+  color: #00ff78;
+
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+
+  caret-color: #00ff78;
+
+  text-shadow: 0 0 10px rgba(0, 255, 120, 0.65);
 }
 
 #verify-answer::placeholder {
-  color: #cba2ae;
+  color: rgba(0, 255, 120, 0.35);
 }
 
 #verify-error {
   min-height: 1.5rem;
+
   margin-top: 0.8rem;
-  color: #ff5f7d;
-  font-family: var(--font-body);
-  font-size: 0.88rem;
+
+  color: #f90029;
+
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+
+  text-shadow: 0 0 10px rgba(255, 79, 109, 0.7);
 }
 
-#verify-step {
-  color: var(--primary-pink);
-  font-weight: 700;
+@media (max-width: 768px) {
+  .verify-terminal {
+    width: min(88%, 520px);
+    font-size: 0.82rem;
+  }
+
+  #verification-screen::after {
+    inset: 12px;
+  }
 }
 
-/* ── Final Access Loading Screen: Romantic Pink Theme ────────── */
+#verify-answer {
+  flex: 1;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  caret-shape: block;
+
+  color: #00ff78;
+
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+
+  caret-color: #00ff78;
+
+  text-shadow: 0 0 10px rgba(0, 255, 120, 0.65);
+
+  animation: terminalFlicker 1s infinite;
+}
+
+@keyframes terminalFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.92;
+  }
+}
+
+/* ── Final Access Loading Screen ───────────────────────── */
+
 #access-loading-screen {
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at center, rgba(0, 255, 120, 0.12), transparent 35%),
+    linear-gradient(135deg, #020403 0%, #050f08 55%, #000000 100%);
+
   z-index: 10001;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+
+  overflow: hidden;
+
   transition:
     opacity 0.5s ease,
     visibility 0.5s ease;
@@ -1828,47 +2339,69 @@ body.unlocked .section-hero {
   pointer-events: auto;
 }
 
+#access-loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#access-loading-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 120, 0.06) 0px,
+    rgba(0, 255, 120, 0.06) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+
+  opacity: 0.35;
+  pointer-events: none;
+
+  animation: scanlineMove 1.2s linear infinite;
+}
+
 .access-loading-content {
   position: relative;
   z-index: 2;
+
   width: min(90%, 520px);
-  padding: 2rem;
-  color: var(--dark-text);
-  font-family: var(--font-body);
+
+  font-family: "Courier New", monospace;
+  color: #00ff78;
+
   text-align: left;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(255, 107, 157, 0.22);
-  border-radius: 26px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 18px 55px rgba(255, 107, 157, 0.16);
+
+  text-shadow: 0 0 10px rgba(0, 255, 120, 0.65);
 }
 
 .access-title {
-  margin-bottom: 0.35rem;
-  color: var(--primary-pink);
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: normal;
-  text-transform: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.18rem;
+  margin-bottom: 0.4rem;
+
+  color: #b6ffcf;
+
+  text-transform: uppercase;
 }
 
 .access-subtitle {
+  font-size: 0.85rem;
+  color: rgba(0, 255, 120, 0.75);
   margin-bottom: 1.5rem;
-  color: #8d6572;
-  font-family: var(--font-body);
-  font-size: 1rem;
 }
 
 .access-code {
-  margin-bottom: 1.5rem;
+  border-left: 2px solid rgba(0, 255, 120, 0.5);
   padding-left: 1rem;
-  color: var(--dark-text);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+
+  font-size: 0.82rem;
   line-height: 1.9;
-  border-left: 3px solid var(--primary-pink);
 }
 
 .access-code div {
@@ -1877,12 +2410,76 @@ body.unlocked .section-hero {
   animation: terminalLine 0.35s ease forwards;
 }
 
-.access-code div:nth-child(1) { animation-delay: 0.2s; }
-.access-code div:nth-child(2) { animation-delay: 0.55s; }
-.access-code div:nth-child(3) { animation-delay: 0.9s; }
-.access-code div:nth-child(4) { animation-delay: 1.25s; }
+.access-code div:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.access-code div:nth-child(2) {
+  animation-delay: 0.55s;
+}
+
+.access-code div:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.access-code div:nth-child(4) {
+  animation-delay: 1.25s;
+}
+
+.access-loading-bar {
+  width: 100%;
+  height: 28px;
+
+  padding: 4px;
+
+  background: #020202;
+
+  border: 2px solid #00ff78;
+  border-radius: 0;
+
+  overflow: hidden;
+
+  position: relative;
+
+  box-shadow:
+    0 0 10px rgba(0, 255, 120, 0.25),
+    inset 0 0 8px rgba(0, 255, 120, 0.12);
+}
+
+.access-loading-bar::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(0, 255, 120, 0.25);
+  pointer-events: none;
+}
+
+.access-loading-bar::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(0, 255, 120, 0.08) 0px,
+    rgba(0, 255, 120, 0.08) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+
+  pointer-events: none;
+}
 
 .access-loading-progress {
+  height: 100%;
+  width: 0%;
+
+  border-radius: 0;
+
+  background: linear-gradient(90deg, #004d27 0%, #00ff78 50%, #6dffb1 100%);
+
+  box-shadow: 0 0 10px rgba(0, 255, 120, 0.45);
+
   animation: none;
 }
 
@@ -1891,32 +2488,21 @@ body.unlocked .section-hero {
 }
 
 @keyframes accessLoadingBar {
-  from { width: 0%; }
-  to { width: 100%; }
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-  .loading-text {
-    font-size: 1.65rem;
-  }
-
-  .verify-terminal,
   .access-loading-content {
-    width: min(88%, 520px);
-    padding: 1.5rem;
-    font-size: 0.9rem;
-  }
-
-  .verify-line {
-    font-size: 0.9rem;
-  }
-
-  .verify-line.success {
-    font-size: 2rem;
+    font-size: 0.85rem;
   }
 
   .access-title {
-    font-size: 2.45rem;
+    font-size: 1.05rem;
   }
 }
-
