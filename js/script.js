@@ -100,7 +100,7 @@ function checkVerification() {
     setTimeout(() => {
       if (questionText) {
         questionText.textContent =
-          "> " + verificationQuestions[verifyCurrentStep];
+          verificationQuestions[verifyCurrentStep];
       }
 
       if (stepText) {
