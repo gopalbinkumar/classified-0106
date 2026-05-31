@@ -81,7 +81,7 @@ function checkVerification() {
 
   if (!validAnswers.includes(userAnswer)) {
     if (error) {
-      error.textContent = "ACCESS DENIED. INVALID RESPONSE.";
+      error.textContent = "INVALID";
     }
 
     input.value = "";
@@ -91,7 +91,7 @@ function checkVerification() {
   }
 
   if (error) {
-    error.textContent = "ACCESS GRANTED FOR STEP " + verifyCurrentStep + ".";
+    error.textContent = "CORRECT";
   }
 
   if (verifyCurrentStep < 4) {
